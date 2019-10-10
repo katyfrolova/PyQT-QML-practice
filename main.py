@@ -76,6 +76,12 @@ class Profile(QObject):
     def open(self):
         return self._open
 
+    @count.setter
+    def count(self, count):
+        self._count = count
+        timer.stop()
+        self.open_changed.emit()
+
     @open.setter
     def open(self, open):
         self._open = open
@@ -93,10 +99,6 @@ class Profile(QObject):
         except TypeError:
             self._count = self._count
         self.counter.emit()
-        print(self._count)
-
-
-
 
 
 if __name__ == "__main__":

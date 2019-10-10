@@ -49,6 +49,7 @@ ApplicationWindow {
 
         onSignalExit: {
             user_profile.open = ''
+            user_profile.count = '0:00:00'
             userProfile.close()
             mainWindow.show()
         }
