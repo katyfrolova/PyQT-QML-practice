@@ -11,6 +11,7 @@ Button {
     text: "Yes"
      onClicked: {
         user_profile.create(profile.name, profile.surname, profile.age, profile.imageLink, profile.info)
+        user_profile.set_open()
         console.log(profile.name)
     }
 }

@@ -72,6 +72,19 @@ Window {
                 }
              }
             Rectangle {
+                width: 50
+                height: 50
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                Layout.row: 2
+                Layout.column: 2
+                Text {
+                    id: counter
+                    text: user_profile.count
+                    font.pixelSize: 20
+                }
+             }
+            Rectangle {
                 width: 100
                 height: 100
                 Layout.fillHeight: true

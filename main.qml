@@ -16,11 +16,26 @@ ApplicationWindow {
     Rectangle {
         id: body
         width: parent.width*0.8
-        height: parent.height*0.8
+        height: parent.height*0.6
 
         ProfileForm {
         id: profile
         anchors.fill: body
+        }
+
+        Text {
+            id: time_today
+            anchors.top: profile.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 30
+            text: change_date.date
+        }
+        Text {
+            id: date_today
+            anchors.top: time_today.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 30
+            text: change_date.time
         }
     }
 
@@ -28,14 +43,14 @@ ApplicationWindow {
         id: button
         }
 
-
     UserProfile {
         id: userProfile
         title: 'Profile'
 
         onSignalExit: {
-           userProfile.close()
-           mainWindow.show()
+            user_profile.open = ''
+            userProfile.close()
+            mainWindow.show()
         }
     }
 
